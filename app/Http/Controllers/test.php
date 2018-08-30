@@ -19,7 +19,7 @@ class test extends Controller
 		// ]);
 		// return redirect()->back()->with('mes','ko loi');
 		
-		echo Auth::user();  
+		echo Cart::subtotal(2,'.','');
 
 
 

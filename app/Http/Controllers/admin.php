@@ -132,12 +132,12 @@ class admin extends Controller
         {
 
             $file->move(
-                'images', //nơi cần lưu
-                $fileName //tên file
+                'images', //mapa
+                $fileName //fisier name
                 );
         } else
         {
-            echo "Chưa có file";
+            echo "Nu exista fisierul";
         }
 
 

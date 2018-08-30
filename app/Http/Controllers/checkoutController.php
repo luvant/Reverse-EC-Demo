@@ -32,12 +32,12 @@ class checkoutController extends Controller
     	$id_user = Auth::user()->id;
 
     	//order information
-    	$total = Cart::subtotal();
+    	
 
     	//save order
     	$order = new orders;
     	$order->id_client = $id_user;
-    	$order->total=$total;
+    	$order->total=Cart::subtotal(2,'.','');
     	$order->save();
 
     	$id_order = $order->id_order;

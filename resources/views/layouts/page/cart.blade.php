@@ -144,7 +144,7 @@
 					</span>
 
 					<span class="m-text21 w-size20 w-full-sm">
-						$39.00
+						${{Cart::subtotal()}}
 					</span>
 				</div>
 
