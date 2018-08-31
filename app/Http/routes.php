@@ -68,7 +68,12 @@ Route::group(['prefix'=>'api'],function(){
 });
 
 
+//Client dashboard
 
+Route::group(['prefix'=>'MyAccount','middleware'=>'auth'],function(){
+	Route::get('Orders','clientDashboardController@get_orders');
+	Route::get("Orders/{id_order}",'clientDashboardController@get_order');
+});
 
 
 

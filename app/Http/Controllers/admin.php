@@ -126,7 +126,7 @@ class admin extends Controller
     public function add_product_post(Request $req)
     {       
 
-            $file= $req->image;
+        $file= $req->image;
         $fileName = rand(1, 9999).$file->getClientOriginalName();
         if($file)
         {

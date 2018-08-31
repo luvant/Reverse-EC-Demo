@@ -7,7 +7,7 @@
 			<div class="col-sm-12">
 				<section class="panel">
 					<header class="panel-heading">
-						Products
+						Order
 						<span class="tools pull-right">
 							<a href="javascript:;" class="fa fa-chevron-down"></a>
 							<a href="javascript:;" class="fa fa-times"></a>
@@ -18,29 +18,23 @@
 							<table  class="display table table-bordered table-striped" id="dynamic-table">
 								<thead>
 									<tr>
-										<th>Image </th>
-										<th>ID Product</th>
-										<th>Name</th>
-										<th>Price</th>
-										<th>ID Categorie</th>
-										<th>Tax</th>
-										<th>Created</th>
-										<th>Updated</th>
+										<th>Order Code </th>
+										
+										<th>Total</th>
+										<th>Date</th>
+										<th></th>
 									</tr>
 								</thead>
 								<tbody>
 									
-									@foreach($products as $product)
+									@foreach($orders as $order)
 
 									<tr class="gradeA">
-										<td> <img src="images/{{$product->image}}" width="100px" height="100px"> </td>
-										<td>{{$product->id_product}}</td>
-										<td>{{$product->name}}</td>
-										<td>{{$product->price}}</td>
-										<td>{{$product->id_subcategorie}}</td>
-										<td>{{$product->tax}}</td>
-										<td>{{$product->created_at}}</td>
-										<td>{{$product->updated_at}}</td>
+										
+										<td class="id_order" style="font-size: 120%; color: red; font-weight: bold;"><a>{{$order->id_order}}</a></td>
+										<td>{{$order->total}}</td>
+										<td>{{$order->created_at}}</td>
+										<td><a><i class="fas fa-print"></i></a></td>
 									</tr>
 
 									@endforeach

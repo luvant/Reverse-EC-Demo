@@ -10,6 +10,8 @@
     <meta name="author" content="Mosaddek">
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="img/favicon.html">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
 
     <title>Dashboard Admin</title>
 
@@ -669,6 +671,7 @@
 <script type="text/javascript" language="javascript" src="admin-temp/assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
 <script type="text/javascript" src="admin-temp/assets/data-tables/DT_bootstrap.js"></script>
 <script src="admin-temp/js/respond.min.js" ></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <!--right slidebar-->
 <!--dynamic table initialization -->
@@ -760,4 +763,21 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
+</script>
+
+
+<script  type="text/javascript" charset="utf-8" async defer>
+
+  $('.id_order').each(function(){
+    var msg = document.createElement("div");
+msg.innerHTML = "Order number: ";
+    $(this).click(function(){
+      swal({
+        title: "<i>Title</i>", 
+        content: msg
+      });
+
+    });
+  });
+  
 </script>
