@@ -92,3 +92,9 @@ return view('layouts.page.checkout');
 
 
 Route::post('checkoutPost','checkoutController@checkoutPost')->name('checkoutPost');
+
+
+Route::get('pusher',function(){
+event(new App\Events\test('Hi there Pusher!'));
+    return "Event has been sent!";
+});
