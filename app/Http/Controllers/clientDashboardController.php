@@ -27,9 +27,26 @@ class clientDashboardController extends Controller
 
     public function get_order($id_order)
     {
-    	$order_items = DB::select('select * from order_items where id_order =?',[$id_order]);
+    	$order_items = DB::select('select * from order_items JOIN product on(product.id_product = order_items.id_product)
+ where id_order =?',[$id_order]);
+
     	$order = DB::select('select * from orders where id_order=?',[$id_order]);
-    	return view('client_dashboard.pages.order_items',['order'=>$order[0],'order_items'=>$order_items]);
+    	$client = DB::select('select * from client where id_order=?',[$id_order]);
+    	return view('client_dashboard.pages.order_items',['client'=>$client[0],'order'=>$order[0],'order_items'=>$order_items]);
+    }
+
+    public function invoice($id_order)
+    {
+    	$order_items = DB::select('select * from order_items JOIN product on(product.id_product = order_items.id_product)
+ where id_order =?',[$id_order]);
+
+    	$order = DB::select('select * from orders where id_order=?',[$id_order]);
+    	$client = DB::select('select * from client where id_order=?',[$id_order]);
+    	$user = DB::select('select users.name,users.email from users join orders on(orders.id_client=users.id) where orders.id_order=?',[$id_order]);
+
+    	$pdf = PDF::loadView('client_dashboard.pages.invoice',['client'=>$client[0],'order'=>$order[0],'order_items'=>$order_items,'user'=>$user[0]]);
+    	return $pdf->stream();
+
     }
 
 

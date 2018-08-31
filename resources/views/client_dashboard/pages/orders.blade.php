@@ -22,7 +22,7 @@
 										
 										<th>Total</th>
 										<th>Date</th>
-										<th></th>
+										<th>Factura</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -31,10 +31,10 @@
 
 									<tr class="gradeA">
 										
-										<td class="id_order" style="font-size: 120%; color: red; font-weight: bold;"><a>{{$order->id_order}}</a></td>
+										<td class="id_order" style="font-size: 120%; color: red; font-weight: bold;"><a class="id_order_val" href="MyAccount/Orders/{{$order->id_order}}">{{$order->id_order}}</a></td>
 										<td>{{$order->total}}</td>
 										<td>{{$order->created_at}}</td>
-										<td><a><i class="fas fa-print"></i></a></td>
+										<td><a href="MyAccount/Orders/{{$order->id_order}}/invoice" target="_blank"><i class="fas fa-print"></i></a></td>
 									</tr>
 
 									@endforeach
