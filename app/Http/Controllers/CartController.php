@@ -12,8 +12,11 @@ class CartController extends Controller
     //
     public function addCart($id,$name,$qty,$price)
 	{	$image = DB::table('Product')->where('id_product',$id)->value('image');
-		
+		$image_link=DB::table('Product')->where('id_product',$id)->value('image_link');
+		if($image)
 		Cart::add($id,$name,$qty,$price,['image'=>$image]);
+		else
+		Cart::add($id,$name,$qty,$price,['image_link'=>$image_link]);
 
 		echo Cart::content();
 	}

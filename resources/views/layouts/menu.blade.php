@@ -164,7 +164,12 @@
               @foreach(Cart::content() as $item)
               <li class="header-cart-item">
                 <div class="header-cart-item-img">
+                  @if($item->options->image!='')
                   <img src="images/{{$item->options->image}}" alt="IMG">
+                  @endif
+                  @if($item->options->image_link!='')
+                  <img src="{{$item->options->image_link}}" alt="IMG">
+                  @endif
                 </div>
 
                 <div class="header-cart-item-txt">

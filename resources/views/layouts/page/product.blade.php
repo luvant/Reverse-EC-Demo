@@ -225,11 +225,14 @@
 						
 						@foreach($products as $product)
 
-						<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
+						<div class="col-sm-12 col-md-6 col-lg-4 p-b-50" style="max-height: 457px;"> 
 							<!-- Block2 -->
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-									<img src="images/{{$product->image}}" alt="IMG-PRODUCT" style="max-height: 400px">
+									@if($product->image_link)
+									<img src="{{$product->image_link}}" alt="IMG-PRODUCT"/>
+
+									@endif
 
 									<div class="block2-overlay trans-0-4">
 										<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -251,9 +254,10 @@
 										{{$product->name}}
 									</a>
 
-									<span class="block2-price m-text6 p-r-5">
+									<span class="block2-price m-text6 p-r-5" style="font-weight: bold">
 										{{$product->price}}
 									</span>
+									<span>LEI </span>
 								</div>
 							</div>
 						</div>

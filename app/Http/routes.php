@@ -102,3 +102,7 @@ Route::get('pusher',function(){
 	event(new App\Events\test('Hi there Pusher!','COMCAC'));
 	return "Event has been sent!";
 });
+
+
+Route::get('curl/get_subcategorie','curlController@get_subcategorie');
+Route::get('curl/get_product','curlController@get_product');

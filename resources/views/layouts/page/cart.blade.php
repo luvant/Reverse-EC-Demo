@@ -27,7 +27,13 @@
 							<td class="column-1"><a href="{{URL::to('removeCart/'.$item->id)}}">
 								<i class="fa fa-times" aria-hidden="true"></i>
 								<div class="cart-img-product b-rad-4 o-f-hidden">
-									<img src="images/{{$item->options->image}}" alt="IMG-PRODUCT">
+									
+									@if($item->options->image!='')
+                  <img src="images/{{$item->options->image}}" alt="IMG">
+                  @endif
+                  @if($item->options->image_link!='')
+                  <img src="{{$item->options->image_link}}" alt="IMG">
+                  @endif
 										
 								</div></a>
 							</td>
