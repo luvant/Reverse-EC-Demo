@@ -10,7 +10,7 @@
     <meta name="author" content="Mosaddek">
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="img/favicon.html">
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <title>Dashboard Admin</title>
 
     <!-- Bootstrap core CSS -->
@@ -664,7 +664,7 @@
 <!--script for this page-->
 <script src="admin-temp/js/sparkline-chart.js"></script>
 <script src="admin-temp/js/easy-pie-chart.js"></script>
-<script src="admin-temp/js/count.js"></script>
+<!-- <script src="admin-temp/js/count.js"></script> -->
 
 <script type="text/javascript" language="javascript" src="admin-temp/assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
 <script type="text/javascript" src="admin-temp/assets/data-tables/DT_bootstrap.js"></script>
@@ -736,7 +736,7 @@
                     var json = $.parseJSON(data);
                     $.each(json, function() {
 
-                        new_subcategorie += "<option value='"+this['id_subcategorie']+"'>"+this['name']+"</option>";
+                    new_subcategorie += "<option value='"+this['id_subcategorie']+"'>"+this['name']+"</option>";
 
                   });
 

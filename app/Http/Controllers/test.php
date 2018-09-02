@@ -8,6 +8,8 @@ use Cart;
 use Auth;
 use fzaninotto\faker\src\Faker\Provider\vi_VN\Address;
 use Igaster\LaravelCities\Geo;
+use Pusher;
+use App\Events\test as test1;
 class test extends Controller
 {
     //
@@ -19,8 +21,8 @@ class test extends Controller
 		// ]);
 		// return redirect()->back()->with('mes','ko loi');
 		
-		echo Cart::subtotal(2,'.','');
-
+			
+		  event(new test1(Cart::content(),'2'));
 
 
 	}
@@ -34,7 +36,7 @@ class test extends Controller
 
 	public function invoice()
 	{
-			$pdf = PDF::loadView('invoice');
-    		return $pdf->stream();
+		$pdf = PDF::loadView('invoice');
+		return $pdf->stream();
 	}
 }

@@ -49,5 +49,10 @@ class clientDashboardController extends Controller
 
     }
 
+    public function get_profile()
+    {
+        return view('client_dashboard.pages.profile');
+    }
+
 
 }

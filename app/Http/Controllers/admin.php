@@ -103,8 +103,20 @@ class admin extends Controller
             return redirect()->route('index');
     }
 
+    public function get_orders()
+    {
+        $orders = DB::select('select * from orders');
+
+        return view('admin.page.orders',['orders'=>$orders]);
+    }
 
 
+    public function dashboard()
+    {   
+        $user_count = DB::select('select count(*) as nr from users');
+        // print_r($user_count);
+        return view('admin.page.index',['user_count'=>$user_count[0]]);
+    }
 
 
     //product
