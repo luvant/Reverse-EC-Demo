@@ -59,7 +59,7 @@
                                   </div>
 
                                   <div class="bio-row">
-                                      <p><span>Country </span>: <select class="form-control m-bot15" id="categorie">
+                                      <p><span>Country </span>: <select class="form-control m-bot15" name="country">
                                               <option value="AF">Afghanistan</option>
                                               <option value="AX">Åland Islands</option>
                                               <option value="AL">Albania</option>
@@ -313,14 +313,14 @@
 
                                   </div>
                                   <div class="bio-row">
-                                      <p><span>Birthday</span>: <input type="text" class="form-control" name="birthday"></p>
+                                      <p><span>City </span>: <input type="text" class="form-control" value="{{Auth::user()->city}}" name="city"></p>
                                   </div>
                                   <div class="bio-row">
-                                      <p><span>Occupation </span>: <input type="text" class="form-control" name="occupation"></p>
+                                      <p><span>Occupation </span>: <input type="text" class="form-control" value="{{Auth::user()->occupation}}" name="occupation"></p>
                                   </div>
 
                                   <div class="bio-row">
-                                      <p><span>Mobile </span>: <input type="text" class="form-control" name="telefon"></p>
+                                      <p><span>Mobile </span>: <input type="text" class="form-control" value="{{Auth::user()->telefon}}" name="telefon"></p>
                                   </div>
 
                               </div>

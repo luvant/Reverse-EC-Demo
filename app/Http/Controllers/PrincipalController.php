@@ -20,11 +20,25 @@ use Illuminate\Support\Facades\Input;
 class PrincipalController extends Controller
 {
     //
-    public function product_get_all(Request $request){
-        $products = DB::select('select * from product order by RAND()');
-        $products = $this->arrayPaginator($products, $request);
-        return view('layouts.page.product')->with('products', $products);
+    public function product_get_all(Request $request,$categorie=null,$id_categorie=null){
+
+            if(!isset($categorie)&&!isset($id_categorie)){
+                $products = DB::select('select * from product order by RAND()');
+
+
+            }
+           else{
+               $products = DB::select('SELECT * from product INNER join sub_categorie on(product.id_subcategorie=sub_categorie.id_subcategorie) where sub_categorie.id_subcategorie=?',[$id_categorie]);
+
+
+
+           }
+
+
+     $products = $this->arrayPaginator($products, $request);
+      return view('layouts.page.product',['products'=>$products]);
     }
+
 
 
     public function arrayPaginator($array, $request)

@@ -294,7 +294,7 @@
       <!-- sidebar menu start-->
       <ul class="sidebar-menu" id="nav-accordion">
           <li>
-              <a class="active" href="index.html">
+              <a class="active" href="MyAccount/dasboard">
                   <i class="fa fa-dashboard"></i>
                   <span>Dashboard</span>
               </a>
@@ -306,7 +306,7 @@
               </a>
           </li>
           <li>
-              <a class="active" href="MyAccount/Orders">
+              <a class="active" href="MyAccount/Profile">
                   <i class="fas fa-user"></i>
                   <span>Profile</span>
               </a>

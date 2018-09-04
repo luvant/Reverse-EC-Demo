@@ -53,26 +53,21 @@
         </div>
 
         <span class="topbar-child1">
-          Free shipping for standard order over $100
+
         </span>
 
         <div class="topbar-child2">
           <span class="topbar-email">
-            fashe@example.com
+            Reverse
           </span>
 
-          <div class="topbar-language rs1-select2">
-            <select class="selection-1" name="time">
-              <option>USD</option>
-              <option>EUR</option>
-            </select>
-          </div>
+
         </div>
       </div>
 
       <div class="wrap_header">
         <!-- Logo -->
-        <a href="index.html" class="logo">
+        <a href="" class="logo">
           <img src="principal/images/icons/logo.png" alt="IMG-LOGO">
         </a>
 
@@ -81,20 +76,35 @@
           <nav class="menu">
             <ul class="main_menu">
               <li>
-                <a href="index.html">Home</a>
-                <ul class="sub_menu">
-                  <li><a href="index.html">Homepage V1</a></li>
-                  <li><a href="home-02.html">Homepage V2</a></li>
-                  <li><a href="home-03.html">Homepage V3</a></li>
-                </ul>
+                <a href="">Home</a>
+
               </li>
 
               <li>
-                <a href="product.html">Shop</a>
+                <a href="product">Shop</a>
+                <ul class="sub_menu" style="max-width: 1000px; min-width: 1000px">
+                  @foreach($categorie_return as $key=>$value)
+                    <li  style="float:left;">
+                      <a href="#" class="s-text13 active1">
+                        <h4 >{{$key}}</h4>
+
+                      </a>
+
+                      <ul>
+                        @foreach($value as $item)
+                          <li style="margin-top: 0px;">
+                            <a href="product/{{$item->name.'/'.$item->id_subcategorie}}">{{$item->name}}</a>
+                          </li>
+                        @endforeach
+                      </ul>
+
+                    </li>
+                  @endforeach
+                </ul>
               </li>
 
               <li class="sale-noti">
-                <a href="product.html">Sale</a>
+                <a href="product">Sale</a>
               </li>
 
               <li>
@@ -143,7 +153,7 @@
                   @if(Auth::user()->rule==10)
                   <li><a href="{{ url('/admin-data') }}"><i class="fa fa-btn fa-user-circle"></i>My Account</a></li>
                   @else 
-                  <li><a href="{{ url('') }}"><i class="fa fa-btn fa-user-circle"></i>My Account</a></li>
+                  <li><a href="{{ url('/MyAccount') }}"><i class="fa fa-btn fa-user-circle"></i>My Account</a></li>
                   @endif
                   <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                 </ul>
@@ -214,7 +224,7 @@
 <!-- Header Mobile -->
 <div class="wrap_header_mobile">
   <!-- Logo moblie -->
-  <a href="index.html" class="logo-mobile">
+  <a href="" class="logo-mobile">
     <img src="principal/images/icons/logo.png" alt="IMG-LOGO">
   </a>
 
@@ -345,21 +355,26 @@
       </li>
 
       <li class="item-menu-mobile">
-        <a href="index.html">Home</a>
+        <a href="">Home</a>
         <ul class="sub-menu">
-          <li><a href="index.html">Homepage V1</a></li>
-          <li><a href="home-02.html">Homepage V2</a></li>
-          <li><a href="home-03.html">Homepage V3</a></li>
+
         </ul>
         <i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
       </li>
 
       <li class="item-menu-mobile">
-        <a href="product.html">Shop</a>
+        <a href="product">Shop</a>
+
+          <ul class="sub-menu">
+            @foreach($categorie_return as $key=>$value)
+            <li><a href="">{{$key}}</a></li>
+            @endforeach
+          </ul>
+        <i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
       </li>
 
       <li class="item-menu-mobile">
-        <a href="product.html">Sale</a>
+        <a href="product">Sale</a>
       </li>
 
       <li class="item-menu-mobile">
@@ -394,7 +409,7 @@
 
       <div>
         <p class="s-text7 w-size27">
-          Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+          Any questions? Let us know in store at 32 Gheorghe Casu, Chisinau
         </p>
 
         <div class="flex-m p-t-30">
@@ -547,7 +562,7 @@
     </a>
 
     <div class="t-center s-text8 p-t-20">
-      Copyright © 2018 All rights reserved. | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+      Copyright © 2018 All rights reserved. IA1501
     </div>
   </div>
 </footer>

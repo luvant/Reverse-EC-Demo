@@ -67,7 +67,7 @@ class checkoutController extends Controller
     	$shipping->id_order = $id_order;
     	$shipping->save();
 
-
+        return view('layouts.page.checkout_mes');
 
     }
 }

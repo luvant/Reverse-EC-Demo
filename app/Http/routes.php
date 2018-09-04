@@ -78,19 +78,20 @@ Route::group(['prefix' => 'MyAccount', 'middleware' => 'auth'], function () {
     Route::get("Orders/{id_order}", 'clientDashboardController@get_order');
     Route::get("Orders/{id_order}/invoice", 'clientDashboardController@invoice');
     Route::get('Profile', 'clientDashboardController@get_profile');
-    Route::post('postProfile', 'clientDashboardController@post_profile')->name('postProfile');
+    Route::post('postProfile', 'clientDashboardController@update_profile')->name('postProfile');
 
 });
 
 
 Route::group(['prefix' => 'product'], function () {
     Route::get('', 'PrincipalController@product_get_all');
+    Route::get('{categorie}/{id_categorie}','PrincipalController@product_get_all');
 });
 
 
 Route::get('checkout', function () {
     return view('layouts.page.checkout');
-});
+})->middleware('auth');
 
 
 Route::post('checkoutPost', 'checkoutController@checkoutPost')->name('checkoutPost');
@@ -104,3 +105,7 @@ Route::get('pusher', function () {
 
 Route::get('curl/get_subcategorie', 'curlController@get_subcategorie');
 Route::get('curl/get_product', 'curlController@get_product');
+
+Route::get('mes', function () {
+    return view('layouts.page.checkout_mes');
+})->middleware('auth');

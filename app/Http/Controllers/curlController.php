@@ -72,7 +72,7 @@ class curlController extends Controller
 
 	public function get_product()
 	{
-		$base = 'https://www.miniprix.ro/barbati/imbracaminte/jachete---paltoane?PS=36';
+		$base = 'https://www.miniprix.ro/barbati/accesorii/cravate-si-papioane?O=OrderByReleaseDateDESC&PS=48';
 
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
@@ -104,7 +104,7 @@ class curlController extends Controller
 //                 <li><a href="/femei/imbracaminte/sport?PS=36&O=OrderByReleaseDateDESC">Sport</a></li>
 //                 <li><a href="/femei/imbracaminte/topuri---tricouri?PS=36&O=OrderByReleaseDateDESC">Topuri &amp; Tricouri</a></li>
 //                 <li><a href="/femei/imbracaminte/plaja-si-piscina?PS=36&O=OrderByReleaseDateDESC">Plaja &amp; Piscina</a></li>
-//             </ul>'); 
+//             </ul>');
 // $e = $html->find("li",0);
 
 
@@ -121,7 +121,7 @@ class curlController extends Controller
 			$product = new product();
  
 			$product->name = $name;
-			$product->id_subcategorie = 6;
+			$product->id_subcategorie = 52;
 			$product->price = $price;
 			$product->image_link = $image;
 			$product->save();

@@ -8,6 +8,7 @@ use App\Http\Requests;
 use Cart;
 use App\Product;
 use DB;
+use App\User;
 use App\client;
 use App\orders;
 use App\order_items;
@@ -62,7 +63,14 @@ class clientDashboardController extends Controller
 
     public function update_profile(Request $request)
     {
-
+        $update = User::find(Auth::user()->id);
+        $update->name = $request->name;
+        $update->telefon = $request->telefon;
+        $update->country = $request->country;
+        $update->city = $request->city;
+        $update->occupation = $request->occupation;
+        $update->save();
+        return redirect()->back();
     }
 
 }
