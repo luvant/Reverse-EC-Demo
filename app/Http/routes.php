@@ -43,7 +43,7 @@ Route::get('api/cart', function () {
 
 
 //admin
-Route::group(['prefix' => 'admin-data', 'middleware' => 'admin_auth'], function () {
+Route::group(['prefix' => 'admin-data', 'middleware' => ['admin_auth','SqlInjection']], function () {
     Route::get('/', 'admin@dashboard');
     Route::get('product/add/form', 'admin@add_product_form');
 
@@ -72,7 +72,7 @@ Route::group(['prefix' => 'api'], function () {
 
 //Client dashboard
 
-Route::group(['prefix' => 'MyAccount', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => 'MyAccount', 'middleware' => ['auth','SqlInjection']], function () {
     Route::get('/', 'clientDashboardController@get_orders');
     Route::get('Orders', 'clientDashboardController@get_orders');
     Route::get("Orders/{id_order}", 'clientDashboardController@get_order');
@@ -86,6 +86,7 @@ Route::group(['prefix' => 'MyAccount', 'middleware' => 'auth'], function () {
 Route::group(['prefix' => 'product'], function () {
     Route::get('', 'PrincipalController@product_get_all');
     Route::get('{categorie}/{id_categorie}','PrincipalController@product_get_all');
+    Route::get('{categorie}','PrincipalController@product_get_all');
 });
 
 

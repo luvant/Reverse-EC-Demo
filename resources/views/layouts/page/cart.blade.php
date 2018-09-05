@@ -156,9 +156,10 @@
 
 				<div class="size15 trans-0-4">
 					<!-- Button -->
+					<a href="checkout">
 					<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
 						Proceed to Checkout
-					</button>
+					</button></a>
 				</div>
 			</div>
 		</div>

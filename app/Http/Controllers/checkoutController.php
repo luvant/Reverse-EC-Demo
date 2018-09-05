@@ -16,7 +16,9 @@ class checkoutController extends Controller
     //
 
     public function checkoutPost(Request $req)
-    {
+    {   if(isset($req)){
+
+
     	$name = $req->name;
     	$phone = $req->phone;
     	$email = $req->email;
@@ -32,7 +34,7 @@ class checkoutController extends Controller
     	$id_user = Auth::user()->id;
 
     	//order information
-    	
+
 
     	//save order
     	$order = new orders;
@@ -66,8 +68,11 @@ class checkoutController extends Controller
     	$shipping->message = $message;
     	$shipping->id_order = $id_order;
     	$shipping->save();
-
+        Cart::destroy();
         return view('layouts.page.checkout_mes');
+    }
+        else
+            return redirect()->route('index');
 
     }
 }

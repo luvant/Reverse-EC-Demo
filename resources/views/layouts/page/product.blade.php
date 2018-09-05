@@ -56,15 +56,15 @@
             <div class="row">
                 <div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
                     <div class="leftbar p-r-20 p-r-0-sm">
-                        <!--  -->
+                        <!--  --><a href="product">
                         <h4 class="m-text14 p-b-7">
                             Categories
-                        </h4>
+                        </h4></a>
 
                         <ul class="p-b-54">
                             @foreach($categorie_return as $key=>$value)
                                 <li class="p-t-4">
-                                    <a href="#" class="s-text13 active1">
+                                    <a href="product/{{$key}}" class="s-text13 active1">
                                         <h4 style="color: #400003">{{$key}}</h4>
 
                                     </a>
