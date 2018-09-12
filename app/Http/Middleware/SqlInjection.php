@@ -15,9 +15,9 @@ class SqlInjection
      */
     public function handle($request, Closure $next)
     {   if($request->route()->parameter('id_product'))
-            if(!preg_match('/[0-9]+/',$request->route()->parameter('id_product')))
+            if(!preg_match('/^[0-9]+$/',$request->route()->parameter('id_product')))
                 return redirect()->route('index');
-        if(!preg_match('/[0-9]+/',$request->route()->parameter('id_order')))
+        if(!preg_match('/^[0-9]+$/',$request->route()->parameter('id_order')))
             if(!is_int($request->route()->parameter('id_order')))
                 return redirect()->route('index');
         return $next($request);
